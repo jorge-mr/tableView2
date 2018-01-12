@@ -60,6 +60,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         arregloEmojis[indexPath.row].seleccionado = !arregloEmojis[indexPath.row].seleccionado
         tableView.reloadRows(at: [indexPath], with: .automatic)
+        let alertController = UIAlertController(title: "Fac Ingenieria", message: "iOS Lab Ingenieria", preferredStyle: .alert)
+        let alertAction = UIAlertAction(title: "Cancel", style: .destructive, handler: nil)
+        let alertAction2 = UIAlertAction(title: "Ok", style: .default, handler: nil)
+        let alert3 = UIAlertAction(title: "title", style: .cancel) { (action) in
+            print("accion")
+        }
+        alertController.addAction(alertAction)
+        alertController.addAction(alertAction2)
+        alertController.addAction(alert3)
+        present(alertController, animated: true, completion: nil)
     }
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
